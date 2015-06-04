@@ -1,15 +1,26 @@
-//
-//  main.c
-//  vol.0-13
-//
-//  Created by 太田　一毅 on 2015/06/05.
-//  Copyright (c) 2015年 太田一毅. All rights reserved.
-//
-
 #include <stdio.h>
 
+int stack[10];
+int data[20];
+int i;
+int j;
+int n;
+
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
+    i = 0;
+    j = 0;
+    while (scanf("%d",&data[i])!=EOF) {
+        i ++;
+        j ++;
+    }
+    for (i = 0; i < j; i ++) {
+        if (data[i] == 0) {
+            n --;
+            printf("%d\n",stack[n]);
+        } else {
+            stack[n] = data[i];
+            n ++;
+        }
+    }
     return 0;
 }
